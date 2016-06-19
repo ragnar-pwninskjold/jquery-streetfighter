@@ -68,3 +68,6 @@ function lookingCool (){
 	$('#looking-cool')[0].play();
 	$('#theme-song')[0].pause();
 }
+
+
+//put HULK copy below
