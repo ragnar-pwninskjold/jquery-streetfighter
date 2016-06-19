@@ -1,6 +1,7 @@
 
 
 $(document).ready(function(){
+    playTheme();
     $('.ryu').mouseenter(function(){
         $('.ryustill').hide();
         $('.ryuready').show();
@@ -26,26 +27,27 @@ $(document).ready(function(){
         $('.ryuready').show();
     });
 
-    $(document).keydown(function(event) {
-    	var keycode=(event.keyCode ? event.keyCode : event.which);
-    	if (keycode == 88) {
-    		$(".ryuready").hide();
-    		$(".ryucool").show();
-    		lookingCool();
-    		
-    		
-    	}
+$(document).keydown(function(event) {
+	if (event.which==88) {
+		lookingCool();
+		$(".ryuready").hide();
+		$(".ryuhad").hide();
+		$(".ryustill").hide();
+		$(".ryucool").show();
 
-    		$(".ryuready").hide();
-    		$(".ryucool").show();
-
-    })
-    .keyup(function(event) {
-    	$(".ryucool").hide();
-    	$(".ryustill").show();
-    });
-
-    playTheme();
+	}
+})
+.keyup(function(event) {
+	if (event.which==88)
+	$("#looking-cool").stop();
+	$("#looking-cool").load();
+	$(".ryustill").show();
+	$(".ryucool").hide();
+	$(".ryuhad").hide();
+	$(".ryuready").hide();
+	playTheme();
+	
+});
 
 });
 
@@ -63,10 +65,6 @@ function playTheme(){
 
 function lookingCool (){
 	$('#looking-cool')[0].volume = 0.5;
-	$('#looking-cool')[0].load();
 	$('#looking-cool')[0].play();
-	$('#theme-song').each(function(){
-		this.pause();
-		this.currentTime=0;
-	});
+	$('#theme-song')[0].pause();
 }
