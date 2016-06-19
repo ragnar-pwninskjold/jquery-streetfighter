@@ -1,6 +1,7 @@
 body {
 	background-color: black;
-
+	font-family: 'Architects Daughter', cursive;
+	font-size: 1.3rem;
 }
 
 .main {
@@ -14,13 +15,12 @@ body {
 	z-index: 1;
 }
 
-.ryu {
-	float: left;
-}
 
-.ryuready, .ryustill, .ryuhad {
+
+.ryuready, .ryustill, .ryuhad, .ryucool {
 	width: 659px;
 	height: 494px;
+	float: left;
 }
 
 .ryuready, .ryuhad {
@@ -41,7 +41,11 @@ body {
 
 }
 
-.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+.ryucool {
+	background-image: url("../images/ryu-cool.gif");
+}
+
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing, .ryucool {
   background-repeat: no-repeat;
 }
 
@@ -57,6 +61,7 @@ body {
 	left: 626px;
 }
 
-//*{
-	outline: red 1px solid;
+.directions{
+	padding-top: 100px;
+
 }

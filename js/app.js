@@ -26,10 +26,47 @@ $(document).ready(function(){
         $('.ryuready').show();
     });
 
+    $(document).keydown(function(event) {
+    	var keycode=(event.keyCode ? event.keyCode : event.which);
+    	if (keycode == 88) {
+    		$(".ryuready").hide();
+    		$(".ryucool").show();
+    		lookingCool();
+    		
+    		
+    	}
+
+    		$(".ryuready").hide();
+    		$(".ryucool").show();
+
+    })
+    .keyup(function(event) {
+    	$(".ryucool").hide();
+    	$(".ryustill").show();
+    });
+
+    playTheme();
+
 });
 
 function playHadouken() {
     $('#hadouken-sound')[0].volume = 0.5;
     $('#hadouken-sound')[0].load();
     $('#hadouken-sound')[0].play();
+}
+
+function playTheme(){
+	$('#theme-song')[0].volume = 0.5;
+	$('#theme-song')[0].load();
+	$('#theme-song')[0].play();
+}
+
+function lookingCool (){
+	$('#looking-cool')[0].volume = 0.5;
+	$('#looking-cool')[0].load();
+	$('#looking-cool')[0].play();
+	$('#theme-song').each(function(){
+		this.pause();
+		this.currentTime=0;
+	});
 }
