@@ -38,14 +38,15 @@ $(document).keydown(function(event) {
 	}
 })
 .keyup(function(event) {
-	if (event.which==88)
+	if (event.which==88) {
 	$("#looking-cool").stop();
 	$("#looking-cool").load();
-	$(".ryustill").show();
 	$(".ryucool").hide();
 	$(".ryuhad").hide();
-	$(".ryuready").hide();
+	$(".ryuready").show();
+	
 	playTheme();
+}
 	
 });
 
